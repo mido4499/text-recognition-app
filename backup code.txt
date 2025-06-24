@@ -1,0 +1,78 @@
+colon_count = 0
+# name = ""
+# pickup_location = ""
+# drop_off_location = ""
+# date = ""
+# fare = ""
+
+# name_count = 0
+# collecting = False
+# data_item_order = 1
+
+# print(repr(detected_txt))  # For debugging purposes
+
+# for i in range(len(detected_txt)):
+    
+#     # Getting the fare by detecting "EGP"
+#     if detected_txt[i-3: i] == 'EGP':
+#         fare += detected_txt[i+1: i+7]
+
+#     # Getting the character at the current index
+#     thisChar = detected_txt[i]
+
+#     # Skip spaces
+#     if thisChar == ' ' or thisChar == '\n':
+#         continue
+
+#     # count data items by counting colons
+#     if thisChar == ':':
+#         colon_count += 1
+#         continue
+    
+
+#     if colon_count == 1 and name_count < 3:
+#         if thisChar.isupper():
+#             name_count += 1
+#             if name_count < 3:
+#                 name += ' ' + thisChar
+#             else:
+#                 data_item_order = 2
+#         else:
+#             name += thisChar
+#         continue
+
+
+#     if colon_count == 5 and data_item_order == 2:
+#         if thisChar.isalnum() or thisChar == ',':
+#             if len(pickup_location) >= 1 and thisChar.isupper():
+#                 if not pickup_location[-1].isupper():
+#                     pickup_location += ' '
+#             pickup_location += thisChar
+#         else:
+#             data_item_order = 3  
+#         continue
+
+
+
+#     if colon_count == 6 and data_item_order == 3:
+#         if thisChar.isalnum() or thisChar == ',':
+#             if len(drop_off_location) >=1 and thisChar.isupper():
+#                 if not drop_off_location[-1].isupper():
+#                     drop_off_location += ' '
+#             drop_off_location += thisChar
+#         else:
+#             data_item_order = 4
+#         continue
+    
+#     if colon_count == 9 and data_item_order == 4:
+#         if len(date) > 4:
+#             if re.search(r"\d{4}", date):
+#                 data_item_order = 5
+#                 continue
+#         if thisChar.isalnum() or thisChar == ',':
+#            if thisChar.isdigit() and not date[-1].isdigit():
+#                 date += ' ' + thisChar
+#            else:
+#                 date += thisChar
+#         else:
+#             data_item_order = 5
